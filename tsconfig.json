@@ -1,0 +1,19 @@
+{
+  "extends": "./base_tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": "src",
+    "importsNotUsedAsValues": "remove",
+		"esModuleInterop": true,
+    "paths": {
+      "@discordjs/voice": ["./node_modules/@discordjs/voice"],
+      "@discordjs/opus": ["./node_modules/@discordjs/opus"],
+      "sodium": ["./node_modules/sodium"],
+      "libsodium-wrappers": ["./node_modules/libsodium-wrappers"],
+      "tweetnacl": ["./node_modules/tweetnacl"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [""]
+}
