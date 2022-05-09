@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS 'cotizacion_actual' (
 );`;
 
 const db = new Database("db.sqlite", { verbose: console.log });
+db.exec(initTable);
+
 const stm = db.prepare(
   "INSERT INTO cotizacion_actual (oficial, solidario, blue, mep, ccl, dai, time) VALUES (?, ?, ?, ?, ?, ?, ?)"
 );
@@ -35,7 +37,6 @@ const selectActual = db.prepare(
   "SELECT * FROM cotizacion_actual WHERE time BETWEEN ? AND ?"
 );
 
-db.exec(initTable);
 
 const app = express();
 
