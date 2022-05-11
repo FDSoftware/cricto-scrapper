@@ -2,6 +2,7 @@
   "name": "cricto-scrapper",
   "version": "0.0.1",
   "description": "-",
+  "type": "module",
   "scripts": {
     "dev": "nodemon --config nodemon.json src/bot.ts",
     "dev:debug": "nodemon --config nodemon.json --inspect-brk src/bot.ts",
@@ -13,13 +14,14 @@
     "build": "tsc",
     "build:check": "tsc --noEmit --incremental false"
   },
-  "author": "Amish Shah <contact@shah.gg>",
+  "author": "FDSoftware <fdsoftware@churrosoft.ar>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.27.2",
     "better-sqlite3": "^7.5.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "node-fetch": "2.6.1",
+    "node-fetch": "3.2.4",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

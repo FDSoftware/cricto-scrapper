@@ -15,7 +15,7 @@
 		"useUnknownInCatchVariables": true,
 
 		// Modules
-		"module": "CommonJS",
+		"module": "esnext",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 
