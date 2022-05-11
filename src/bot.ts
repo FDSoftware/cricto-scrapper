@@ -201,19 +201,23 @@ app.get("/day", async (_req: any, res) => {
   }
 
   const variations = getVariations.all(tomorrow_date, from, to);
+  let resultData;
+  if (variations[1]?.oficial) {
+    resultData = {
+      ...data,
+      variations: {
+        oficial: calcVariation("oficial", variations),
+        solidario: calcVariation("solidario", variations),
+        blue: calcVariation("blue", variations),
+        mep: calcVariation("mep", variations),
+        ccl: calcVariation("ccl", variations),
+        dai: calcVariation("dai", variations),
+      },
+    };
+  } else {
+    resultData = data;
+  }
 
-  const resultData = {
-    ...data,
-    variations: {
-      oficial: calcVariation("oficial", variations),
-      solidario: calcVariation("solidario", variations),
-      blue: calcVariation("blue", variations),
-      mep: calcVariation("mep", variations),
-      ccl: calcVariation("ccl", variations),
-      dai: calcVariation("dai", variations),
-    },
-  };
-  console.log(resultData);
   res.send(data.dai ? resultData : {});
 });
 
